@@ -1,19 +1,19 @@
 PDOK / NGR documentatie
 =======================
 
-Welkom op de documentatiepagina van `Publieke Dienstverlening op de Kaart <https://www.pdok.nl>`_ (PDOK) en het `Nationaal GeoRegister <http://nationaalgeoregister.nl/geonetwork/srv/dut/search>`_ (NGR). Deze pagina beschrijft de geo-APIs die aangeboden worden door PDOK/NGR waarmee ontwikkelaars kaartbeelden kunnen genereren, gegevens kunnen opvragen en eenvoudige ruimtelijke analyses kunnen uitvoeren. De belangrijkste webservices zijn:
+Welkom op de documentatiepagina van `Publieke Dienstverlening op de Kaart <https://www.pdok.nl>`_ (PDOK) en het `Nationaal GeoRegister <https://nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search>`_ (NGR). Deze pagina beschrijft de geo-APIs die aangeboden worden door PDOK/NGR waarmee ontwikkelaars kaartbeelden kunnen genereren, gegevens kunnen opvragen en eenvoudige ruimtelijke analyses kunnen uitvoeren. De belangrijkste type webservices zijn:
 
-- de **Web Map Service** (WMS) - de zogenaamde *view* service genereert een statische kaartuitsnedes van geo-informatie in een raster formaat zoals PNG, GIF of JPEG. 
+- de **Web Map Service** (WMS) - de zogenaamde *view* service genereert een statische kaartuitsnedes van geo-informatie in een raster formaat zoals PNG, GIF of JPEG.
 - de **Web Feature Service** (WFS) - de zogenaamde *download* service is een protocol voor het opvragen van geografische vector data, al dan niet via een ruimtelijk filter.
 
-Deze services worden ook aangeboden door `data.overheid.nl <https://data.overheid.nl>`_, `Atlas Leefomgeving <http://www.atlasleefomgeving.nl/>`_, `Geoportaal Waterschappen <http://waterschapservices.webgispublisher.nl/Choosemap.aspx>`_, `Ruimtelijkeplannen.nl <http://www.ruimtelijkeplannen.nl/web-roo/roo/?>`_ en internationale open data portalen zoals `data.gov.uk <http://data.gov.uk/>`_ en `http://www.data.gov/ <http://www.data.gov/>`_.
+Deze services worden ook aangeboden door `data.overheid.nl <https://data.overheid.nl>`_, `Atlas Leefomgeving <http://www.atlasleefomgeving.nl/>`_,  `Ruimtelijkeplannen.nl <http://www.ruimtelijkeplannen.nl/web-roo/roo/?>`_ en internationale open data portalen zoals `data.gov.uk <http://data.gov.uk/>`_ en `www.data.gov <http://www.data.gov/>`_.
 
 .. _doel-feedback:
 
 Doel, feedback en bijdragen
 ===========================
 
-Het doel van de documentatie is om gebruikers handvaten te geven om snel aan de slag te kunnen met Nederlandse geodata. Het geeft kort en bondig overzicht van de basisfaciliteiten- en functionaliteiten van PDOK en NGR en verwijst z.s.m. naar uitgebreidere infromatiebronnen.
+Het doel van de documentatie is om gebruikers handvatten te geven om snel aan de slag te kunnen met Nederlandse geodata. Het geeft kort en bondig overzicht van de basisfaciliteiten- en functionaliteiten van PDOK en NGR en verwijst naar uitgebreidere informatiebronnen.
 
 Heb je feedback over de documentatie of vragen over (het gebruik van) de geo-APIs? Post een `issue in de bug tracker <https://github.com/Geonovum/PDOK-NGR-documentatie/issues>`_, een bericht op `het forum <http://pdokforum.geonovum.nl>`_, stuur een email naar *s punt nedkov at geonovum punt nl* of een tweet naar `@SimeonNedkov <https://twitter.com/simeonnedkov>`_.
 

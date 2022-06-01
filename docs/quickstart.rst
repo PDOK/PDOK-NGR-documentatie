@@ -7,7 +7,7 @@
 Maak een kaart met ...
 ######################
 
-De geo services en APIs van `PDOK`_, `NGR`_, `data.overheid.nl`_, e.a. komen in een aantal smaken. De **view** services (:ref:`WMS <wms>`, :ref:`WMTS <wmts>` en :ref:`TMS <TMS>`) leveren statische kaarbeelden (PNG, JPG) en zijn geschikt voor het visualiseren van achtergrondkaarten en grote landsdekkende datasets zoals de `Actueel Hoogtebestand Nederland <http://nationaalgeoregister.nl/geonetwork/srv/dut/search#|c00b2d04-1e54-41c6-9b87-c226798361c0>`_. De **download** service (:ref:`WFS <OGC-WFS>`) levert geografische vector data en de bijbehorende administratieve gegevens in bijv. GeoJSON.
+De geoservices en APIs van `PDOK`_, `NGR`_, `data.overheid.nl`_, e.a. komen in een aantal smaken. De **view** services (:ref:`WMS <wms>`, :ref:`WMTS <wmts>` en :ref:`TMS <TMS>`) leveren statische kaartbeelden (PNG, JPG) en zijn geschikt voor het visualiseren van achtergrondkaarten en grote landsdekkende datasets zoals de `Actueel Hoogtebestand Nederland 3 <https://nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/41daef8b-155e-4608-b49c-c87ea45d931c>`_. De **download** service (:ref:`WFS <OGC-WFS>`) levert geografische vector data en de bijbehorende administratieve gegevens in bijv. GeoJSON.
 
 De webservices en APIs van PDOK, NGR, e.a. zijn op verschillende manieren te bekijken en downloaden.
 
@@ -15,11 +15,11 @@ De webservices en APIs van PDOK, NGR, e.a. zijn op verschillende manieren te bek
 PDOK Kaart
 **********
 
-Met `PDOK Kaart <http://kaart.pdok.nl/>`_ kun je met een aantal klikken een eenvoudig kaartje maken met gegevens uit PDOK, NGR, de geo services van data.overheid.nl e.a. PDOK Kaart stelt je in staat om markers en lijnen te tekenen en van labels te voorzien of deze uit een kommagescheiden (CSV) of KML bestand te laden.
+Met `PDOK Kaart <http://kaart.pdok.nl/>`_ kun je met een aantal klikken een eenvoudig kaartje maken met gegevens uit PDOK, NGR, de geoservices van data.overheid.nl e.a. PDOK Kaart stelt je in staat om markers en lijnen te tekenen en van labels te voorzien of deze uit een kommagescheiden (CSV) of KML bestand te laden.
 
-De gegenereerde PDOK Kaart kunt u opslaan en het bijv. mailen naar vrienden en collega's of embedden in uw blog, website, CMS, etc.
+De gegenereerde PDOK Kaart kunt u opslaan en het bijv. mailen naar vrienden en collega's of insluiten in uw website.
 
-PDOK Kaart Wizard is uitermate geschikt voor het maken van eenvoudige kaartjes voor bijv. contactpagina's en routebeschrijving, of voor het visualiseren van basisregistraties en -datasets bijv. de Lange-afstandswandelroutes. 
+PDOK Kaart Wizard is uitermate geschikt voor het maken van eenvoudige kaartjes voor bijv. contactpagina's en routebeschrijving, of voor het visualiseren van basisregistraties en -datasets bijv. de `lange-afstandswandelroutes <https://nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/7eb439f7-17e1-45e2-b340-1f3dfb2286db/>`_.
 
 .. raw:: html
 
@@ -102,14 +102,14 @@ Ga als volgt te werk om de :ref:`download service <wfs>` van bijv. de `Zeer kwet
 
 1. In het hoofdmenu klik op ``Layer``-> ``Add Layer`` -> ``Add WFS Layer``
 2. Klik op ``New``
-3. Vul een naam in in bij ``Name`` 
+3. Vul een naam in in bij ``Name``
 4. Plak de WFS URL (``http://ags101.prvgld.nl/arcgis/services/INSPIRE_ov/MapServer/WFSServer``) in het ``URL`` veld en klik op ``OK``
 5. Klik op ``Connect``
-6. Kies een van de lagen en klik op ``Add`` 
+6. Kies een van de lagen en klik op ``Add``
 7. De gekozen laag verschijnt in de ``Layers`` pane
 8. Klik met de rechtermuisknop op de laag en selecteer ``Zoom to layer``
 
-In :ref:`wfs` lees je meer over de verschillende *view* services. :ref:`webapps` laat zien hoe je *download* services in Leaflet en OpenLayers kan laden. 
+In :ref:`wfs` lees je meer over de verschillende *view* services. :ref:`webapps` laat zien hoe je *download* services in Leaflet en OpenLayers kan laden.
 
 *******************
 CartoDB (en Mapbox)
@@ -134,7 +134,7 @@ In QGIS gaat het downloaden en transformeren als volgt:
 .. image:: images/qgis-vector-save.png
     :align: center
 
-Het nieuwe bestand kun je uploaden in CartoDB, gebruiken als databron in Mapbox Studio of visualiseren in Google Earth. 
+Het nieuwe bestand kun je uploaden in CartoDB, gebruiken als databron in Mapbox Studio of visualiseren in Google Earth.
 
 ogr2ogr
 =======
@@ -146,4 +146,4 @@ ogr2ogr is een *command line utility* waarmee gegevens uit een groot aantal bron
     ogr2ogr -f GeoJSON bag.geojson WFS:"http://geodata.nationaalgeoregister.nl/bagviewer/wfs" \
     -t_srs EPSG:4326 bagviewer:pand
 
-Zie de :ref:`ogr2ogr handleiding <ogr2ogr tutorial>` voor meer informatie. 
+Zie de :ref:`ogr2ogr handleiding <ogr2ogr tutorial>` voor meer informatie.

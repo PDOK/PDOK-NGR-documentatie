@@ -5,7 +5,7 @@
 Handleidingen
 #############
 
-Hoe zet je adressen om naar coördinaten? Hoe maak je Nederlandse geodata geschikt om te plotten in bijv. Leaflet of CartoDB? Hoe download je grote hoeveelheden data uit een WFS endpoint? 
+Hoe zet je adressen om naar coördinaten? Hoe maak je Nederlandse geodata geschikt om te plotten in bijv. Leaflet of CartoDB? Hoe download je grote hoeveelheden data uit een WFS endpoint?
 
 **************************************
 Geocoderen - van adres naar coördinaat
@@ -16,23 +16,23 @@ Het omzetten van adressen naar geografische coördinaten heet `geocoderen <https
 Op de desktop: QGIS
 ===================
 
-De PDOK BAG Geocoder plugin voor QGIS is zet adressen om naar coördinaten op de kaart. De plugin leest een CSV bestand in bijv. adressen.csv en geeft je een geogerefereerd Shapefile terug (adressen.shp). De plugin spreekt de `PDOK Geocoder <https://www.pdok.nl/nl/service/openls-bag-geocodeerservice>`_ aan.
+De PDOK BAG Geocoder plugin voor QGIS is zet adressen om naar coördinaten op de kaart. De plugin leest een CSV bestand in bijv. adressen.csv en geeft je een geo-gerefereerd shapefile terug (`adressen.shp`). De plugin spreekt de `PDOK Geocoder <https://www.pdok.nl/nl/service/openls-bag-geocodeerservice>`_ aan.
 
 .. image:: images/qgis-geocoder.png
     :align: center
 
-Klein nadeeltje van de PDOK Geocoder is dat ie coördinaten in het Nederlandse coördinatenstelsel retourneert. CartoDB, Mapbox, Google Maps, etc. verwachten coördinaten in lat/lng. In :ref:`coord-trans` lees je hoe je coördinaten kan transformeren in o.a. QGIS.
+Klein nadeeltje van de PDOK Geocoder is dat ie coördinaten in het Nederlandse coördinatenstelsel retourneert. CartoDB, Mapbox, Google Maps, etc. verwachten coördinaten in `lat/lng`. In :ref:`coord-trans` lees je hoe je coördinaten kan transformeren in o.a. QGIS.
 
 Via een API
 ===========
 
-Nederland telt een aantal Geocodeer APIs waarmee je (betaald) adressen kan geocoderen. 
+Nederland telt een aantal geocodeer APIs waarmee je (betaald) adressen kan geocoderen.
 
 - `PDOK Geocoder <https://www.pdok.nl/nl/service/openls-bag-geocodeerservice>`_
 - `Postcode API <http://www.postcodeapi.nu/>`_ van `Apiwise <http://www.apiwise.nl/>`_
-- `Overheid.io <https://overheid.io/documentatie/bag>`_ 
+- `Overheid.io <https://overheid.io/documentatie/bag>`_
 
-Op http://openaddresses.io/ vindt je geodata waarmee je je eigen geocodeer (API) kan bouwen. 
+Op http://openaddresses.io/ vindt je geodata waarmee je je eigen geocodeer (API) kan bouwen.
 
 .. _coord-trans:
 
@@ -42,7 +42,7 @@ Coördinatentransformaties
 
 Nederlandse geodata gebruiken het `Rijksdriehoekscoördinatenstelsel <https://nl.wikipedia.org/wiki/Rijksdriehoeksco%C3%B6rdinaten>`_, ook wel bekend als ``Amersfoort / RD New``. RD-coördinaten worden niet (out-of-the-box) door Google Maps, Mapbox, CartoDB, e.a. ondersteund. Deze diensten gebruiken de `WGS84 / Pseudo-Mercator <https://en.wikipedia.org/wiki/Web_Mercator>`_ projectie. Hoewel ``Pseudo-Mercator`` meter [m] als eenheid heeft, gebruiken Google Maps, Mapbox, CartoDB, e.a. *lengte- en breedtegraden* als coördinaten voor vector features. Deze lengte- en breedtegraden duiden een plek aan op de aarde zoals benaderd door de WGS84 ellipsoïde. Om Nederlandse vector data in bijv. Mapbox te visualiseren moet je RD-coördinaten daarom naar WGS84 transformeren i.p.v. Pseudo-Mercator. **Let op**: dit geldt niet voor rasters.
 
-Het transformeren van coördinaten kan in de desktop met :ref:`QGIS <coord-trans-qgis>`, in de browser met :ref:`proj4js <coord-trans-proj4js>` en in de *command line* met :ref:`ogr2ogr <coord-trans-ogr2ogr>`. Om deze tools te gebruiken moet je de EPSG (European Petroleum Survey Group) codes van de coördinatenstelsels weten waartussen je wilt transformeren. Deze vindt je op `epsg.io <http://epsg.io/>`_:
+Het transformeren van coördinaten kan in de desktop met :ref:`QGIS <coord-trans-qgis>`, in de browser met :ref:`proj4js <coord-trans-proj4js>` en in de commandline met :ref:`ogr2ogr <coord-trans-ogr2ogr>`. Om deze tools te gebruiken moet je de EPSG (European Petroleum Survey Group) codes van de coördinatenstelsels weten waartussen je wilt transformeren. Deze vindt je op `epsg.io <http://epsg.io/>`_:
 
 - ``Amersfoort / RD New`` heeft `EPSG code 28992 <http://epsg.io/28992>`_
 - ``Pseudo-Mercator`` heeft `EPSG code 3857 <http://epsg.io/3857>`_
@@ -66,7 +66,7 @@ Op de desktop: QGIS
 
 .. _coord-trans-proj4js:
 
-In de browser: proj4js
+In de browser: *proj4js*
 ======================
 
 De JavaScript bibliotheek `proj4js <http://proj4js.org/>`_ is gemaakt voor het transformeren van coördinaten.
@@ -78,16 +78,16 @@ De JavaScript bibliotheek `proj4js <http://proj4js.org/>`_ is gemaakt voor het t
 
     // World Geodetic System, in gebruik door Google Maps, Mapbox, CartoDB, e.a.
     var WGS84 = "WGS84";
-    
+
     var transformed = proj4(RD,WGS84,[0,0]);
     // Array [ 3.3135577051498664, 47.974765849805124 ]
-    
+
 .. _coord-trans-ogr2ogr:
 
-In de terminal: ogr2ogr
+In de terminal: `ogr2ogr`
 =======================
 
-Het programma `ogr2ogr` is een command line utility die een groot aantal geodata formats kan lezen en schrijven. Omzetten van coördinaten in het Nederlandse coördinatenstelsel naar WGS84 gaat als volgt
+Het programma `ogr2ogr` is een commandline tool die een groot aantal geodata formats kan lezen en schrijven. Omzetten van coördinaten in het Nederlandse coördinatenstelsel naar WGS84 gaat als volgt
 
 ::
 
@@ -101,9 +101,9 @@ WFS - pagination
 ******************
 .. NOTE:: Dit is een `bijdrage <http://www.brentjensgeoict.nl/index.php?post=haal-meer-data-en-geojson-uit-een-pdok-wfs>`_ van Thijs Brentjens.
 
-De Web Feature Services van PDOK bieden toegang tot allerlei (vector)data. De data van de BAG, natura2000, het NWB wegennet, bestuurlijke grenzen en wat dan ook kan je ophalen voor gebruik in eigen applicaties. Bijvoorbeeld in QGIS, OpenLayers of andere tooling. Voor de service URLs kan je kijken op de PDOK `services <https://www.pdok.nl/nl/producten/pdok-services>`_ pagina.
+De Web Feature Services van PDOK bieden toegang tot allerlei (vector)data. De data van de BAG, natura2000, het NWB wegennet, bestuurlijke grenzen en wat dan ook kan je ophalen voor gebruik in eigen applicaties. Bijvoorbeeld in QGIS, OpenLayers of andere tooling. Voor de service URL's kan je kijken op de PDOK `services <https://www.pdok.nl/nl/producten/pdok-services>`_ pagina.
 
-Conform de WFS specificatie gaat het ophalen met GetFeature requests. Bijvoorbeeld een HTTP Get Request om `alle provincie grenzen op te halen <http://geodata.nationaalgeoregister.nl/bestuurlijkegrenzen/wfs?service=WFS&version=2.0.0&request=GetFeature&typename=provincies>`_:
+Conform de WFS specificatie gaat het ophalen met GetFeature requests. Bijvoorbeeld een HTTP GET Request om `alle provincie grenzen op te halen <http://geodata.nationaalgeoregister.nl/bestuurlijkegrenzen/wfs?service=WFS&version=2.0.0&request=GetFeature&typename=provincies>`_:
 
 ::
 
@@ -186,7 +186,7 @@ GML is voor veel webontwikkelaars niet de eerste keus. JSON en GeoJSON voor geod
     typename=bag:ligplaats&
     count=100&
     startindex=100&
-    outputformat=json 
+    outputformat=json
 
 Tot slot: een PDOK WFS steunt nog meer formaten. Zie daarvoor het stukje XML over het outputFormat van het GetFeature-deel in uit de Capabilities van een WFS. Dit Capabilities document is op te vragen via bijvoorbeeld:
 
@@ -230,7 +230,7 @@ Litterally translated it means "Base registration Addresses and Buildings" and i
 
 .. NOTE::
 
-    This tutorial assumes you are familar with the Web Feature Service. Not sure what that is? Review it :ref:`here <wfs>`. 
+    This tutorial assumes you are familar with the Web Feature Service. Not sure what that is? Review it :ref:`here <wfs>`.
 
 In this tutorial we will work with the `Basisregistratie Adressen en Gebouwen dataset (in Dutch) <https://www.kadaster.nl/wat-is-de-bag>`_. It contains, amongst others, the footprints of all the Dutch buildings. It's the base for the `CitySDK <http://citysdk.waag.nl/buildings/>`_ visualisation. The BAG WFS endpoint is located at::
 
@@ -248,7 +248,7 @@ We'll first investigate the endpoint with the *ogrinfo* utility and retrieve the
 
 .. _ogrinfo:
 
-Investigating the data source with ogrinfo 
+Investigating the data source with ogrinfo
 ==========================================
 The *ogrinfo* utility retrieves the metadata of a service. It tells us which layers are available in the service, how many features they contin, in which coordinate reference system is the data stored, etc.
 
@@ -256,7 +256,7 @@ The *ogrinfo* utility retrieves the metadata of a service. It tells us which lay
 
     $ ogrinfo -so WFS:"<url>"
 
-where 
+where
 
 * -so retrieves a summary of the statistics
 * <url> points to a WFS endpoint
@@ -269,7 +269,7 @@ where
 
 which results in::
 
-   INFO: Open of 'WFS:' 
+   INFO: Open of 'WFS:'
          using driver 'WFS' successful.
 
    1. bag:ligplaats (Polygon)
@@ -320,10 +320,10 @@ Filtering
 
 ogr2ogr supports filtering of datasources through a simple *-where* clause as well as sophisticated SQL queries. Retrieving a single column from the footprints dataset through SQL is done as::
 
-    $ ogr2ogr -f GeoJSON gemeenten_2011_84.geojson 
-    WFS:"https://geodata.nationaalgeoregister.nl/bag/wfs/v1_1" 
-    -sql "SELECT CAST('bouwjaar') AS integer 
-    FROM 'bag:pand'" 
+    $ ogr2ogr -f GeoJSON gemeenten_2011_84.geojson
+    WFS:"https://geodata.nationaalgeoregister.nl/bag/wfs/v1_1"
+    -sql "SELECT CAST('bouwjaar') AS integer
+    FROM 'bag:pand'"
     -t_srs EPSG:4326
 
 bounding box query:

@@ -66,12 +66,12 @@ Provinciaal GeoRegister
 ******************
 Atlas Leefomgeving
 ******************
- 
+
 *In de Atlas Leefomgeving staat veel basisinformatie over uw leefomgeving, het overheidsbeleid en de invloed van factoren zoals lucht of natuur op de gezondheid.*
 
 **URL:** https://www.atlasleefomgeving.nl/
 
-**Toegang tot vector data:** 
+**Toegang tot vector data:**
 
 1. ga naar http://www.atlasleefomgeving.nl/kijken
 2. open een kaart bijv. ``Cultureel Erfgoed`` -> ``Rijksmonumenten``
@@ -111,14 +111,14 @@ Atlas Natuurlijk Kapitaal
 .. Bassisregistratie Adressen en Gebouwen (BAG)
 .. *******************************************
 
-.. TODO: schrijf een algemene beschrijving van dataset: waar te halen, wat zit erin, etc. 
+.. TODO: schrijf een algemene beschrijving van dataset: waar te halen, wat zit erin, etc.
 
-.. TODO: link naar apps, analyses, visualisaties, etc. die de BAG als basis gebruiken. 
+.. TODO: link naar apps, analyses, visualisaties, etc. die de BAG als basis gebruiken.
 
 .. *******************************
 .. Actueel Hoogtebestand Nederland
 .. *******************************
 
-.. TODO: schrijf een algemene beschrijving van dataset: waar te halen, wat zit erin, etc. 
+.. TODO: schrijf een algemene beschrijving van dataset: waar te halen, wat zit erin, etc.
 
-.. TODO: link naar apps, analyses, visualisaties, etc. die de BAG als basis gebruiken. 
+.. TODO: link naar apps, analyses, visualisaties, etc. die de BAG als basis gebruiken.
